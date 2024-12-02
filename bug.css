@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `calc()` function with percentages and viewport units:
+
+```css
+.element {
+  width: calc(50% - 20vw);
+}
+```
+
+This code intends to set the width of the `.element` to 50% of its containing element's width, minus 20% of the viewport width. However, in certain browsers or situations, this can lead to unexpected behavior or layout issues.  The subtraction within `calc()` might not be interpreted correctly, potentially leading to negative widths or other rendering problems. 
+
+The issue might arise from the combination of percentage and viewport units within the `calc()` function, causing calculation inconsistencies or interpretation errors.  The order of operations, or the way browsers handle these mixed units, could cause unexpected results. It's also worth noting that if the resulting calculation is negative, the width might default to zero or another unexpected value.
